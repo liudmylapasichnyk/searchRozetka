@@ -15,7 +15,7 @@ public class SearchRozetkaSteps {
  
     @Given("Chrome with opened Rozetka site")
     public void openRozetka() {
-		System.setProperty("webdriver.chrome.driver", "/Users/Liudmyla/Documents/programs/chromedriver 2");
+		System.setProperty("webdriver.chrome.driver", ("/Users/Liudmyla/Documents/programs/chromedriver"));
 		webDriver = new ChromeDriver();
 		webDriver.get("http://rozetka.com.ua/");
     }

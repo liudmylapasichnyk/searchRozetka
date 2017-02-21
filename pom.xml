@@ -13,7 +13,17 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
+<build>
+	<testResources>
+        <testResource>
+            <directory>src/test/resources</directory>
+            <includes>
+                <include>**/*.story</include>
+            </includes>
+        </testResource>
+    </testResources>
+    
+</build>
   <dependencies>
   	<dependency>
         <groupId>org.seleniumhq.selenium</groupId>
