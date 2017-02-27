@@ -34,7 +34,7 @@ public class SearchRozetkaSteps {
 		webDriver.close();
 		String[] qnty = searchResult.split(" ");
 		Integer qntyInt = Integer.valueOf(qnty[1]);
-		System.out.println("Result" + qntyInt);
+		System.out.println("Result " + qntyInt);
 		Assert.assertTrue(qntyInt > 0);
 	}
 }
