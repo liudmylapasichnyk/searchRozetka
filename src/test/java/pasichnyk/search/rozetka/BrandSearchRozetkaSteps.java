@@ -13,14 +13,14 @@ public class BrandSearchRozetkaSteps {
 	private WebDriver webDriver;
 	
 	@Given("Chrome with opened Rozetka site")
-	public void openRozetka() {
+	public void openRozetkaBrand() {
 		System.setProperty("webdriver.chrome.driver", ("src/test/resources/chromedriver"));
 		webDriver = new ChromeDriver();
 		webDriver.get("http://rozetka.com.ua/");
 	}
 	
 	@When ("user types in search bar and confirms it") 
-	public void performSearch() {
+	public void performSearchBrand() {
 		WebElement element = webDriver.findElement(By.name("text"));
 		element.clear();
 		element.sendKeys("Dyson");
@@ -28,12 +28,12 @@ public class BrandSearchRozetkaSteps {
 	}
 	    
 	@Then ("user can see search result page")
-	public void checkResult() {
-		String searchResult = webDriver.findElement(By.className("rz-search-result-qnty")).getText();
+	public void checkResultBrand() {
+		String searchResultBrand = webDriver.findElement(By.className("rz-search-result-qnty")).getText();
 		webDriver.close();
-		String[] qnty = searchResult.split(" ");
-		Integer qntyInt = Integer.valueOf(qnty[1]);
-		System.out.println("Result " + qntyInt);
-		Assert.assertTrue(qntyInt > 0);
+		String[] qntyBrand = searchResultBrand.split(" ");
+		Integer qntyIntBrand = Integer.valueOf(qntyBrand[1]);
+		System.out.println("Result " + qntyIntBrand);
+		Assert.assertTrue(qntyIntBrand > 0);
 	}
 }
